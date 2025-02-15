@@ -1,0 +1,9 @@
+// File with standardized rules for frame
+{
+    "compilerOptions": {
+      "target": "ESNext",
+      "module": "CommonJS",
+      "strict": true,
+      "sourceMap": true,
+          }
+        }
