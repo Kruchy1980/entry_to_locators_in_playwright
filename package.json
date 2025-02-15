@@ -1,9 +1,19 @@
 {
-  "name": "entry_to_lokators_in_playwright",
+  "name": "entry_to_locators_in_playwright",
   "version": "1.0.0",
-  "description": "Repository which contains some base informations about lokators and their usage in Playwright",
+  "description": "Repository which contains some base information's about locators and their usage in Playwright",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test",
+    "test:report": "npx playwright --show-report",
+    "test:ui": "npx playwright test --ui",
+    "test:headed": "npm run test -- --headed",
+    "format": "npx prettier -c *.ts --write .",
+    "format:check": "npx prettier . --check \"!**.ts\"",
+    "lint": "npx eslint . --max-warnings=0",
+    "husky:prep": "npx husky init",
+    "prepare": "husky"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
