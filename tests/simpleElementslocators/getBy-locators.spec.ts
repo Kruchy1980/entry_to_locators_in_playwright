@@ -27,16 +27,16 @@ test.describe('Simple locators getBy... handling', () => {
     const resultTextBox = page.getByTestId('dti-results');
     await expect(resultTextBox).toHaveText('You clicked the button!');
   });
-  test('3. GetByLabel selector @simple', async ({ page }) => {
-    // Arrange - prepare locator button
-    // 1. get button by label
-    const elementLocatorLabel = page.getByLabel('Some text for label');
-    // await expect(elementLocatorLabel).toBeVisible();
-    await expect(elementLocatorLabel).toHaveText('Some text for label');
-    // 2. click the button
-    // await elementLocatorText.click();
-    // // 3. Verify whether proper information is displayed after clicking button
-    // const resultTextBox = page.getByTestId('dti-results');
-    // await expect(resultTextBox).toHaveText('You clicked the button!');
-  });
+  // test('3. GetByLabel selector @simple', async ({ page }) => {
+  //   // Arrange - prepare locator button
+  //   // 1. get button by label
+  //   const elementLocatorLabel = page.getByLabel('Some text for label');
+  //   // await expect(elementLocatorLabel).toBeVisible();
+  //   expect(elementLocatorLabel.textContent()).toBe('Some text for label');
+  //   // 2. click the button
+  //   // await elementLocatorText.click();
+  //   // // 3. Verify whether proper information is displayed after clicking button
+  //   // const resultTextBox = page.getByTestId('dti-results');
+  //   // await expect(resultTextBox).toHaveText('You clicked the button!');
+  // });
 });

@@ -9,34 +9,18 @@ test.describe('Simple locators getBy... handling', () => {
     await simpleElementsPage.navigateTo();
   });
 
-  test('1. GetByRole selector @simple', async ({ page }) => {
+  test('1. CSS selector - ID @advance', async ({ page }) => {
     // Arrange - prepare locator button
-    // const elementLocator = page.getByRole('button');
-    const elementLocator = page.getByRole('button', { name: 'Click me!' });
+    const elementLocator = page.locator('#id-label-element');
 
     await expect(elementLocator).toBeVisible();
+    await expect(elementLocator).toHaveText('Some text for label');
   });
-  test('2. GetByText selector @simple', async ({ page }) => {
+  test('2. XPath selector - ID @advance', async ({ page }) => {
     // Arrange - prepare locator button
-    // 1. get button by text
-    const elementLocatorText = page.getByText('Click me!');
-    await expect(elementLocatorText).toBeVisible();
-    // 2. click the button
-    await elementLocatorText.click();
-    // 3. Verify whether proper information is displayed after clicking button
-    const resultTextBox = page.getByTestId('dti-results');
-    await expect(resultTextBox).toHaveText('You clicked the button!');
-  });
-  test('3. GetByLabel selector @simple', async ({ page }) => {
-    // Arrange - prepare locator button
-    // 1. get button by label
-    const elementLocatorLabel = page.getByLabel('Some text for label');
-    // await expect(elementLocatorLabel).toBeVisible();
-    await expect(elementLocatorLabel).toHaveText('Some text for label');
-    // 2. click the button
-    // await elementLocatorText.click();
-    // // 3. Verify whether proper information is displayed after clicking button
-    // const resultTextBox = page.getByTestId('dti-results');
-    // await expect(resultTextBox).toHaveText('You clicked the button!');
+    const elementLocator = page.locator('//*[@id="id-label-element"]');
+
+    await expect(elementLocator).toBeVisible();
+    await expect(elementLocator).toHaveText('Some text for label');
   });
 });
