@@ -12,7 +12,9 @@
     "format:check": "npx prettier . --check \"!**.ts\"",
     "lint": "npx eslint . --max-warnings=0",
     "husky:prep": "npx husky init",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test:local": "cross-env ENV_NAME=local npm run test",
+    "test-glitch:headed": "cross-env ENV_NAME=glitch npm run test:headed"
   },
   "keywords": [],
   "author": "",

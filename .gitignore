@@ -136,3 +136,5 @@ dist
 /playwright/.cache/
 .env
 /env-template.ts
+tmp/*
+!tmp/.gitkeep

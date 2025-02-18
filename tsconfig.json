@@ -4,6 +4,12 @@
     "target": "ESNext",
     "module": "CommonJS",
     "strict": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@_src/*": ["src/*"],
+      "@_pw-config": ["playwright.config"],
+      "@_config/*": ["config/*"]
+    }
   }
 }
