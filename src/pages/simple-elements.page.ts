@@ -5,6 +5,6 @@ export class SimpleElementsPage extends PracticePage {
   url: string;
   constructor(page: Page) {
     super(page);
-    this.url = '/simple-elements.html/';
+    this.url = 'practice/simple-elements.html';
   }
 }

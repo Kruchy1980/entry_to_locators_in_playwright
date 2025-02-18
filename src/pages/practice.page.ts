@@ -3,7 +3,7 @@ import { Page } from '@playwright/test';
 export class PracticePage {
   url: string;
   constructor(protected page: Page) {
-    this.url = '/practice/';
+    this.url = '/';
   }
 
   async navigateTo(parameters?: string): Promise<void> {
