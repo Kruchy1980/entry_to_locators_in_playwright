@@ -23,39 +23,43 @@
    ```
 
 # General working of locators
+
 **To work with locators**
+
 1. Assign selector to locator
 2. When assigned we can perform action on selector as described in **"Selectors vs Locators"** section pt no 2.
 
 # Code and practice with locators
+
 **Different selectors and locators to interact with element selectors**:
+
 1. High level methods in Playwright - getBy...
    1. The High level methods do not needs selectors for locators creation as shown below - examples only
    ```typescript
    // 1. get element by alt text:
-   const locatorByAltText = page.getByAltText("Image alt text");
+   const locatorByAltText = page.getByAltText('Image alt text');
    // 2. get element by label text:
-   const locatorByLabelText = page.getByLabelText("Some text for label");
+   const locatorByLabelText = page.getByLabelText('Some text for label');
    // 3. get element by placeholder:
-   const locatorByPlaceholder = page.getByAltPlaceholder("Enter your name");
+   const locatorByPlaceholder = page.getByAltPlaceholder('Enter your name');
    // 4. get element by role:
-   const elementByRole = page.getByAltRole("checkbox");
+   const elementByRole = page.getByAltRole('checkbox');
    // 5. get element by test ID:
-   const locatorByTestId = page.getByTestId("label-text");
+   const locatorByTestId = page.getByTestId('label-text');
    // 6. get element by text:
-   const locatorByText = page.getByText("Some text for label");
+   const locatorByText = page.getByText('Some text for label');
    // 7. get element by title:
-   const locatorByTitle = page.getByTitle("Title for label");
+   const locatorByTitle = page.getByTitle('Title for label');
    ```
 2. Lower level methods in Playwright - page.locators(<selector>)
    1. The lower level methods in Playwright needs selectors to create locators as shown on the example below
    ```typescript
    //1. CSS locator
-   const selectorCSS = "#id-label-element";
+   const selectorCSS = '#id-label-element';
    const locatorFromCss = page.locator(selectorCSS);
    //2. XPath locator
    const selectorXPath = "//\*[id='id-label-element']";
-   const locatorFromPath = page.locator(selectorXPath)
+   const locatorFromPath = page.locator(selectorXPath);
    ```
 
 # Detailed look on locators

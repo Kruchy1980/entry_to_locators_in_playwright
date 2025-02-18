@@ -31,4 +31,4 @@ npm run format
 npm run format:check
 ```
 
-## Detailed information's about that course other than setting env and base commands are described in *Description.md* file
+## Detailed information's about that course other than setting env and base commands are described in _Description.md_ file
