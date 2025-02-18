@@ -67,6 +67,7 @@
 For that section look to for the tests in both files [*css_xpath-locators.spec.ts*, *getBy-locators.spec.ts*]
 
 # Basics and _Good Practices_
+
 1. For selectors use attributes as: data-test-id, testid or id
    - Those selectors should be unique for elements
    - They increase speed and make easier of finding elements on web pages
