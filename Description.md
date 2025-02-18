@@ -64,4 +64,21 @@
 
 # Detailed look on locators
 
+For that section look to for the tests in both files [*css_xpath-locators.spec.ts*, *getBy-locators.spec.ts*]
+
 # Basics and _Good Practices_
+1. For selectors use attributes as: data-test-id, testid or id
+   - Those selectors should be unique for elements
+   - They increase speed and make easier of finding elements on web pages
+2. If these attributes do not exists in code than:
+   - Think with team about introduce them into code
+   - If introducing of that attributes won't be possible than think about using other unique attributes
+3. Take care of uniqueness of elements attributes
+   - It will directly find the elements we want yo use to interact
+4. Use carefully high level methods of Playwright
+   - getVyText(), getByRole()m etc.
+   - They can be not enough precise
+   - Better is to use attributes as data-testid or id (recommended)
+5. Use carefully selectors which refers to parents as below
+   - .form-container [data-test-id="submit-button"]
+   - They are dependent of webpage structure and they can be not stable
