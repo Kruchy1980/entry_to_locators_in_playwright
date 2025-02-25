@@ -86,4 +86,5 @@ For that section look to for the tests in both files [*css_xpath-locators.spec.t
    - They are dependent of webpage structure and they can be not stable
 
 # Useful links:
+
 1. URL for lesson with links_1: ***https://jaktestowac.pl/lesson/pw5s01l07/***
