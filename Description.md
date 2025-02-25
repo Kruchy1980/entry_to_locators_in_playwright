@@ -6,6 +6,7 @@
 - [Code and practice with locators](#code-and-practice-with-locators)
 - [Detailed look on locators](#detailed-look-on-locators)
 - [Basics and _Good Practices_](#basics-and-good-practices)
+- [Useful links:](#useful-links)
 
 # Selectors vs Locators
 
@@ -83,3 +84,6 @@ For that section look to for the tests in both files [*css_xpath-locators.spec.t
 5. Use carefully selectors which refers to parents as below
    - .form-container [data-test-id="submit-button"]
    - They are dependent of webpage structure and they can be not stable
+
+# Useful links:
+1. URL for lesson with links_1: ***https://jaktestowac.pl/lesson/pw5s01l07/***

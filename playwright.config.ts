@@ -35,6 +35,8 @@ export default defineConfig({
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://localhost:3000/',
     baseURL: getEnvURL(),
+    // To locate element by other attributes we need to add entry in this section as below (not standardized attributes)
+    // testIdAttribute: 'pw-test', // That entry defines which attribute will be searched using method .getByTestId() in PW
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
