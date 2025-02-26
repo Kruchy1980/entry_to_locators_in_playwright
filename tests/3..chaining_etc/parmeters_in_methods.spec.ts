@@ -23,12 +23,12 @@ test.describe('Parameters in methods tests', () => {
   });
   test('2. Filter method - simple - one liner', async ({ page }) => {
     // Arrange
-    const elementRole = 'button';
+    const elementsRole = 'button';
     const resultsTestId = 'dti-results';
     const expectedMessage = 'You clicked the button!';
     const elementText = 'Click me!';
     // Value declaration with filter method
-    const buttonLocator = page.getByRole(elementRole).filter({ hasText: elementText });
+    const buttonLocator = page.getByRole(elementsRole).filter({ hasText: elementText });
     const resultsLocator = page.getByTestId(resultsTestId);
     // Act
     await buttonLocator.click();
