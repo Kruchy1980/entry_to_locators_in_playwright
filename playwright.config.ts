@@ -1,4 +1,7 @@
+import { getEnvURL } from '@_src/utils/environmentService';
 import { defineConfig, devices } from '@playwright/test';
+// For the session data use the import for path
+import * as path from 'path';
 
 /**
  * Read environment variables from file.
@@ -7,12 +10,16 @@ import { defineConfig, devices } from '@playwright/test';
 // import dotenv from 'dotenv';
 // import path from 'path';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
+// Now we can use data to be stored in STORAGE_STATE
+export const STORAGE_STATE = path.join(__dirname, 'tmp/sessionStorage.json');
 
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
   testDir: './tests',
+  /* prepare path to global.setup.ts */
+  globalSetup: 'config/global.setup.ts',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -26,7 +33,10 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'http://localhost:3000/',
+    // baseURL: 'http://localhost:3000/',
+    baseURL: getEnvURL(),
+    // To locate element by other attributes we need to add entry in this section as below (not standardized attributes)
+    // testIdAttribute: 'pw-test', // That entry defines which attribute will be searched using method .getByTestId() in PW
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
