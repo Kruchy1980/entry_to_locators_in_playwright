@@ -5,6 +5,6 @@ export class CustomAssertionsPage extends PracticePage {
   url: string;
   constructor(page: Page) {
     super(page);
-    this.url = 'practice/ADD LINK';
+    this.url = 'practice/simple-weather-forecast.html';
   }
 }
