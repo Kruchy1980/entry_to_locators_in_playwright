@@ -1,0 +1,43 @@
+import { CustomAssertionsPage } from '@_src/pages/custom-assertion.page';
+import { test } from '@playwright/test';
+import { expect } from '@_src/helpers/humidity.expect';
+
+test.describe('Humidity Verification', () => {
+  let customAssertionsPage: CustomAssertionsPage;
+  test.beforeEach('Navigate to proper page', async ({ page }) => {
+    customAssertionsPage = new CustomAssertionsPage(page);
+    customAssertionsPage.navigateTo();
+  });
+  test('1. Humidity Verification - separate assertion for display and value fixed range', async ({
+    page,
+  }) => {
+    // Arrange
+    const todaysHumidityTestId = 'dti-humidity-today';
+    // Act
+    // const todaysHumidityLocator = page.getByTestId(todaysHumidityTestId);
+    const todaysHumidityLocator = page.getByTestId(todaysHumidityTestId);
+    const displayedHumidityText = await todaysHumidityLocator.textContent();
+
+    // console.log(await todaysHumidityLocator.textContent());
+    // Assert
+    await expect(displayedHumidityText).toContainPercentageSign();
+    await expect(displayedHumidityText).toBeInProperRange();
+  });
+  test('2. Humidity Verification - with dynamic range', async ({ page }) => {
+    // Arrange
+    const todaysHumidityTestId = 'dti-humidity-today';
+    const minExpectedHumidity = 22;
+    const maxExpectedHumidity = 99;
+    // Act
+    // const todaysHumidityLocator = page.getByTestId(todaysHumidityTestId);
+    const todaysHumidityLocator = page.getByTestId(todaysHumidityTestId);
+    const displayedHumidity = await todaysHumidityLocator.textContent();
+
+    // console.log(await todaysHumidityLocator.textContent());
+    // Assert
+    expect(displayedHumidity).toBeCorrectlyDisplayedAndInSpecificRange(
+      minExpectedHumidity,
+      maxExpectedHumidity,
+    );
+  });
+});
