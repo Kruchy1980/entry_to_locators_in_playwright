@@ -22,7 +22,7 @@ export const expect = attributeValidation.extend({
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (e: any) {
       //   pass = false; not needed
-      actualValue = e.matcherResult.actual;
+      actualValue = e.matcherResult?.actual;
     }
 
     if (pass) {
