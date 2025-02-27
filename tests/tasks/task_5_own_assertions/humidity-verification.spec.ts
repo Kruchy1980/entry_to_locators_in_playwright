@@ -1,6 +1,6 @@
+import { expect } from '@_src/helpers/humidity.expect';
 import { CustomAssertionsPage } from '@_src/pages/custom-assertion.page';
 import { test } from '@playwright/test';
-import { expect } from '@_src/helpers/humidity.expect';
 
 test.describe('Humidity Verification', () => {
   let customAssertionsPage: CustomAssertionsPage;
@@ -16,12 +16,14 @@ test.describe('Humidity Verification', () => {
     // Act
     // const todaysHumidityLocator = page.getByTestId(todaysHumidityTestId);
     const todaysHumidityLocator = page.getByTestId(todaysHumidityTestId);
-    const displayedHumidityText = await todaysHumidityLocator.textContent();
+    const displayedHumidityText = await todaysHumidityLocator.innerText();
+    // console.log(await todaysHumidityLocator.textContent()); // Returning node.text there is no assertion visible than - do not use
+    // console.log(await todaysHumidityLocator.innerText());
 
     // console.log(await todaysHumidityLocator.textContent());
     // Assert
-    await expect(displayedHumidityText).toContainPercentageSign();
-    await expect(displayedHumidityText).toBeInProperRange();
+    expect(displayedHumidityText).toContainPercentageSign();
+    expect(displayedHumidityText).toBeInProperRange();
   });
   test('2. Humidity Verification - with dynamic range', async ({ page }) => {
     // Arrange
@@ -31,7 +33,7 @@ test.describe('Humidity Verification', () => {
     // Act
     // const todaysHumidityLocator = page.getByTestId(todaysHumidityTestId);
     const todaysHumidityLocator = page.getByTestId(todaysHumidityTestId);
-    const displayedHumidity = await todaysHumidityLocator.textContent();
+    const displayedHumidity = await todaysHumidityLocator.innerText();
 
     // console.log(await todaysHumidityLocator.textContent());
     // Assert
