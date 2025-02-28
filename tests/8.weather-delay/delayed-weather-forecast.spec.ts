@@ -32,12 +32,12 @@ test.describe('Weather forecast', () => {
     // Arrange
     const temperatureTestId = 'dti-temperature-today';
     const expectedMinTemperature = -20;
-    const expectedMaxTemperature = 50;
+    const expectedMaxTemperature = 33;
     // Locator
     const temperatureLocator = page.getByTestId(temperatureTestId);
     // Act
     // Assert
-    temperatureInRange(temperatureLocator).temperatureToBeInRange(
+    await temperatureInRange(temperatureLocator).temperatureToBeInRange(
       expectedMinTemperature,
       expectedMaxTemperature,
     );
