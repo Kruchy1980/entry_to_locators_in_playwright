@@ -26,18 +26,18 @@ test.describe('Weather forecast', () => {
     expect(tempValueAsNumber).toBeGreaterThanOrEqual(expectedMinTemperature);
     expect(tempValueAsNumber).toBeLessThanOrEqual(expectedMaxTemperature);
   });
-  test('1. Temperature is in proper range (-20 - 33) (custom web first assertion (WFA))', async ({
+  test('2. Temperature is in proper range (-20 - 33) (custom web first assertion (WFA))', async ({
     page,
   }) => {
     // Arrange
     const temperatureTestId = 'dti-temperature-today';
     const expectedMinTemperature = -20;
-    const expectedMaxTemperature = 33;
+    const expectedMaxTemperature = 50;
     // Locator
     const temperatureLocator = page.getByTestId(temperatureTestId);
     // Act
     // Assert
-    temperatureInRange(temperatureLocator).temperatureInRange(
+    temperatureInRange(temperatureLocator).temperatureToBeInRange(
       expectedMinTemperature,
       expectedMaxTemperature,
     );

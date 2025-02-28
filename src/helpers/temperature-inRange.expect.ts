@@ -10,7 +10,7 @@ export const expect = temperatureInRange.extend({
   ): Promise<MatcherReturnType> {
     let message = '';
     let pass = false;
-    let actualValue: string; // Set here just to verify what is current temp value, Type must be corrected from undefined to string
+    let actualValue = ''; // Set here just to verify what is current temp value, Type must be corrected from undefined to string
 
     // Assertion
     try {
@@ -24,8 +24,8 @@ export const expect = temperatureInRange.extend({
       actualValue = elementValue; // Just additional info for user -
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
-      //   pass = false; // Not needed here we do not need to overwrite result which is false from the beginning
       actualValue = error.matcherResult?.actual;
+      pass = false; // Not needed here we do not need to overwrite result which is false from the beginning
     }
 
     if (pass) {
