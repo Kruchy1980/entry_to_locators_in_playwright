@@ -1,6 +1,6 @@
 import { WeatherForecastSlowPage } from '@_src/pages/simple-weather-forecast-slow.page';
-import { test, expect } from '@playwright/test';
-import { expect as temperatureInRange } from '@_src/helpers/temperature-inRange.expect';
+import { test } from '@playwright/test';
+import { expect } from '@_src/helpers/temperature-inRange.expect';
 
 test.describe('Weather forecast', () => {
   let weatherForecastSlowPage: WeatherForecastSlowPage;
@@ -34,7 +34,7 @@ test.describe('Weather forecast', () => {
     const temperatureLocator = page.getByTestId(temperatureTestId);
     // Act
     // Assert
-    await temperatureInRange(temperatureLocator).temperatureToBeInRange(
+    await expect(temperatureLocator).temperatureToBeInRange(
       expectedMinTemperature,
       expectedMaxTemperature,
     );
