@@ -1,4 +1,4 @@
-import { WeatherForecastSlowPage } from '@_src/pages/simple-weather-forecast-slow.page';
+import { WeatherForecastSlowPage } from '@_src/pages/out_of_mock/simple-weather-forecast-slow.page';
 import { test } from '@playwright/test';
 import { expect } from '@_src/helpers/temperature-inRange.expect';
 

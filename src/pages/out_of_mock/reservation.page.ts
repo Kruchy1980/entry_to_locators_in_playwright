@@ -1,5 +1,5 @@
 import { Page } from '@playwright/test';
-import { PracticePage } from './practice.page';
+import { PracticePage } from '@_src/pages/practice.page';
 
 export class ReservationPage extends PracticePage {
   url: string;

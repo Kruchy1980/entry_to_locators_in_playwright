@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { expect as beingInRange } from '@_src/helpers/weather-temperature.expect';
-import { WeatherForecastPage } from '@_src/pages/simple-weather-forecast.page';
+import { WeatherForecastPage } from '@_src/pages/out_of_mock/simple-weather-forecast.page';
 
 test.describe('Weather forecast', () => {
   let weatherForecastPage: WeatherForecastPage;

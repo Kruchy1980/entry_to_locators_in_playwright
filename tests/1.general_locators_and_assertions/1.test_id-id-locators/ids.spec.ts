@@ -1,4 +1,4 @@
-import { CustomAttributesPage } from '@_src/pages/custom-attribute.page';
+import { CustomAttributesPage } from '@_src/pages/out_of_mock/custom-attribute.page';
 import { test, expect } from '@playwright/test';
 
 // How to skip the custom attribute from tests:

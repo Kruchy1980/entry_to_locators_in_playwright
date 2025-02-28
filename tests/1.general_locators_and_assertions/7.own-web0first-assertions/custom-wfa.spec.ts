@@ -1,4 +1,4 @@
-import { NotPresentElementsPage } from '@_src/pages/not-present-elements.page';
+import { NotPresentElementsPage } from '@_src/pages/out_of_mock/not-present-elements.page';
 import { test, expect } from '@playwright/test';
 import { expect as validateAttribute } from '@_src/helpers/locator.expect';
 

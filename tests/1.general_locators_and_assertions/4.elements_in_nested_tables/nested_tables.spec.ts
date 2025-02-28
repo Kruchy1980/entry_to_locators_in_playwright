@@ -1,4 +1,4 @@
-import { NestedTablesPage } from '@_src/pages/nested_tables.page';
+import { NestedTablesPage } from '@_src/pages/out_of_mock/nested_tables.page';
 import { test, expect } from '@playwright/test';
 
 test.describe('Nested tables handling', () => {

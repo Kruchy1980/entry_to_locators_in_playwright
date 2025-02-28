@@ -1,4 +1,4 @@
-import { NotDisplayedElementsPage } from '@_src/pages/not-displayed-elements.page';
+import { NotDisplayedElementsPage } from '@_src/pages/out_of_mock/not-displayed-elements.page';
 import { test, expect } from '@playwright/test';
 
 test.describe('Auto waiting in PW', () => {

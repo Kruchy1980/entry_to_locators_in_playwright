@@ -1,5 +1,5 @@
 // import { PracticePage } from '@_src/pages/practice.page';
-import { SimpleElementsPage } from '@_src/pages/simple-elements.page';
+import { SimpleElementsPage } from '@_src/pages/out_of_mock/simple-elements.page';
 import { test, expect } from '@playwright/test';
 
 test.describe('Simple locators getBy... handling', () => {

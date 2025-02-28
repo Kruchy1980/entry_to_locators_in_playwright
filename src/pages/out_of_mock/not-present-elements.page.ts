@@ -1,5 +1,5 @@
 import { Page } from '@playwright/test';
-import { PracticePage } from './practice.page';
+import { PracticePage } from '@_src/pages/practice.page';
 
 export class NotPresentElementsPage extends PracticePage {
   url: string;

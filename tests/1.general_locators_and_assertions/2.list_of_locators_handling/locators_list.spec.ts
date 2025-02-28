@@ -1,4 +1,4 @@
-import { SimpleMultipleElementsPage } from '@_src/pages/simple-multiple-elements.page';
+import { SimpleMultipleElementsPage } from '@_src/pages/out_of_mock/simple-multiple-elements.page';
 import { test, expect } from '@playwright/test';
 
 test.describe('List of locators handling', () => {
