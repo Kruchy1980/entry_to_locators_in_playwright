@@ -8,9 +8,6 @@ test.describe('Weather forecast', () => {
     weatherForecastSlowPage = new WeatherForecastSlowPage(page);
     await weatherForecastSlowPage.navigateTo();
   });
-  test('just for verification if works', () => {
-    expect(1).toBeGreaterThanOrEqual(0);
-  });
   test('1. Temperature is in proper range (-20 - 33) (not-custom assertion)', async ({ page }) => {
     // Arrange
     const temperatureTestId = 'dti-temperature-today';
