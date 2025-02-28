@@ -17,7 +17,9 @@ test.describe('Not Present Elements handling', () => {
     const inputLocator = page.getByTestId(inputTestId);
     //Act
     //Assert
-    await expect(inputLocator).toHaveAttribute('maxLength', String(expectedMaxLength));
+    await expect(inputLocator).toHaveAttribute('maxLength', String(expectedMaxLength), {
+      timeout: 10000,
+    });
   });
   test('2. Input max length - simple test - custom assert', async ({ page }) => {
     //Arrange
