@@ -1,12 +1,12 @@
-import { CustomAssertionsPage } from '@_src/pages/custom-assertion.page';
 import { test, expect } from '@playwright/test';
 import { expect as beingInRange } from '@_src/helpers/weather-temperature.expect';
+import { WeatherForecastPage } from '@_src/pages/simple-weather-forecast.page';
 
 test.describe('Weather forecast', () => {
-  let customAssertionsPage: CustomAssertionsPage;
+  let weatherForecastPage: WeatherForecastPage;
   test.beforeEach('Navigate to proper page', async ({ page }) => {
-    customAssertionsPage = new CustomAssertionsPage(page);
-    customAssertionsPage.navigateTo();
+    weatherForecastPage = new WeatherForecastPage(page);
+    await weatherForecastPage.navigateTo();
   });
   test('1. Temperature in range - without custom assertion', async ({ page }) => {
     // Arrange
