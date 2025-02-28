@@ -1,4 +1,3 @@
-// import { SimpleUserPage } from '@_src/pages/for_mocks/simple-user.page';
 import { SimpleUserPage } from '@_src/pages/for_mocks/simple-user.page';
 import { test, expect } from '@playwright/test';
 
@@ -26,7 +25,8 @@ test.describe('User data tests - mock', () => {
       await route.fulfill({ json: json }); // Without that step browser won't display the result
     });
     // Act
-    await page.goto('practice/random-simple-user-v1.html');
+    // await page.goto('practice/random-simple-user-v1.html');
+    await simpleUserPage.navigateTo();
     // Assert
     await expect(userNameLocator).toBeVisible();
     const userName = await userNameLocator.innerText();
