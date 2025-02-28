@@ -29,7 +29,7 @@ export const expect = temperatureInRange.extend({
     }
 
     if (pass) {
-      message = 'Passed';
+      message = `Passed on: ${new Date().toISOString()}`;
     } else {
       message = `temperatureToBeInRange assertion failed.\n\t 
       You expected the locator to have value between ${min} - ${max} \n\t 
