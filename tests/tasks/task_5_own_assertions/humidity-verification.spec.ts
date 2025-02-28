@@ -1,12 +1,12 @@
 import { expect } from '@_src/helpers/humidity.expect';
-import { CustomAssertionsPage } from '@_src/pages/custom-assertion.page';
+import { WeatherForecastPage } from '@_src/pages/simple-weather-forecast.page';
 import { test } from '@playwright/test';
 
 test.describe('Humidity Verification', () => {
-  let customAssertionsPage: CustomAssertionsPage;
+  let weatherForecastPage: WeatherForecastPage;
   test.beforeEach('Navigate to proper page', async ({ page }) => {
-    customAssertionsPage = new CustomAssertionsPage(page);
-    customAssertionsPage.navigateTo();
+    weatherForecastPage = new WeatherForecastPage(page);
+    weatherForecastPage.navigateTo();
   });
   test('1. Humidity Verification - separate assertion for display and value fixed range', async ({
     page,
