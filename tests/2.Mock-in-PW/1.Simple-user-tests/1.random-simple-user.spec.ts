@@ -5,7 +5,8 @@ import { test, expect } from '@playwright/test';
 test.describe('User data tests - mock', () => {
   // The below use is not useful for API mocking
   let simpleUserPage: SimpleUserPage;
-  test.beforeEach('Navigate to proper page', async ({ page }) => {
+  test.beforeAll('Navigate to proper page', async ({ page }) => {
+    // BeforeAll is used because no action performed except variable preparation
     simpleUserPage = new SimpleUserPage(page);
     //   await simpleUserPage.navigateTo();
   });
