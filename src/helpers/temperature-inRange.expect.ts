@@ -11,7 +11,11 @@ export const expect = temperatureInRange.extend({
     let message = '';
     let pass = false;
     let actualValue = ''; // Set here just to verify what is current temp value, Type must be corrected from undefined to string
-
+    // Other solution
+    interface MatcherError extends Error {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      matcherResult?: { actual?: any };
+    }
     // Assertion
     try {
       // Verify whether element is visible
@@ -22,9 +26,9 @@ export const expect = temperatureInRange.extend({
       const isInRange = elementValueAsNumber >= min && elementValueAsNumber <= max; // Verify whether value is in range
       pass = isInRange; // Overwrite pass = false to pass = true
       actualValue = elementValue; // Just additional info for user -
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (error: any) {
-      actualValue = error.matcherResult?.actual;
+    } catch (error: unknown) {
+      const typedError = error as MatcherError;
+      actualValue = typedError.matcherResult?.actual;
       pass = false; // Not needed here we do not need to overwrite result which is false from the beginning
     }
 
