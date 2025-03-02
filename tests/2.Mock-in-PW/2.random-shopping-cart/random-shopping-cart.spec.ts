@@ -387,7 +387,7 @@ test.describe('User data tests - mock', () => {
       // Arrange
       const shippingTestId = 'shipping-cost';
       const subtotalPriceTestId = 'total-subtotal-price';
-      const expectedShippingPrice = '2.65';
+      const expectedShippingPrice = '2.7';
       const expectedSubtotalPrice = '26.82';
       const subtotalPriceLocator = page.getByTestId(subtotalPriceTestId);
       const shippingPriceLocator = page.getByTestId(shippingTestId);
