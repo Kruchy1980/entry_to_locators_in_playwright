@@ -26,7 +26,7 @@ test.describe('City weather handling', () => {
     expect(tableResultsQuantity).toBeGreaterThanOrEqual(expectedMinResultsQuantity);
   });
   test('2. Proper display of average temperature calculation (mocked)', async ({ page }) => {
-    // const firstRowNumber = 0;
+    // const defaultRowNumber = 0;
     // const dailyTemperatureTestId = `dti-temperature-${firstRowNumber}`;
     // const resultsTableLocator = page.getByTestId(resultsTableTestId);
     // const dailyTemperatureLocator = page.getByTestId(dailyTemperatureTestId);
