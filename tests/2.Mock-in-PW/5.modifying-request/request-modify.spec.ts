@@ -59,10 +59,10 @@ test.describe('City weather handling', () => {
     // Act
     // Modify reqeust - another param must be added - request
     // Request contain data from the backend
-    await page.route('/api/v1/data/random/weather-simple', async (route, reqeust) => {
+    await page.route('/api/v1/data/random/weather-simple', async (route, request) => {
       // 1. Retrieve data from request sent to backend - request payload must be parsed to JSON
       // JSON.parse - returns us object which can be full object or null that is why we need to add condition in method
-      const payloadBody = JSON.parse(reqeust.postData() || '{}');
+      const payloadBody = JSON.parse(request.postData() || '{}');
       // 2. assign to part of received object fiedld of City as we expect
       payloadBody.city = expectedCityText;
       await route.continue({ postData: payloadBody });
