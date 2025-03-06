@@ -1,5 +1,5 @@
 import { expect } from '@_src/helpers/humidity.expect';
-import { WeatherForecastPage } from '@_src/pages/simple-weather-forecast.page';
+import { WeatherForecastPage } from '@_src/pages/out_of_mock/simple-weather-forecast.page';
 import { test } from '@playwright/test';
 
 test.describe('Humidity Verification', () => {

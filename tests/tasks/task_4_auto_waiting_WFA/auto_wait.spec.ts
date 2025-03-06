@@ -1,4 +1,4 @@
-import { DelayedElementsPage } from '@_src/pages/delayed_elements_results.page';
+import { DelayedElementsPage } from '@_src/pages/out_of_mock/delayed_elements_results.page';
 import { test, expect } from '@playwright/test';
 
 test.describe('Auto waiting in PW - tasks', () => {

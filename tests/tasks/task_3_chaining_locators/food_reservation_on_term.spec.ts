@@ -1,5 +1,5 @@
 /* eslint-disable playwright/no-conditional-in-test */
-import { ReservationPage } from '@_src/pages/reservation.page';
+import { ReservationPage } from '@_src/pages/out_of_mock/reservation.page';
 import { test, expect } from '@playwright/test';
 
 test.describe('Food reservation tests', () => {
