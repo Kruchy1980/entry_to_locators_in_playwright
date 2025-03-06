@@ -1,6 +1,6 @@
-# entry_to_lokators_in_playwright
+# entry_to_locators_in_playwright
 
-Repository which contains some base informations about locators and their usage in Playwright
+Repository which contains some base information's about locators and their usage in Playwright
 
 # Instalation and initialization of repo
 
@@ -32,3 +32,12 @@ npm run format:check
 ```
 
 ## Detailed information's about that course other than setting env and base commands are described in _Description.md_ file
+
+
+## CDP links:
+1. Official Chrome Network manager docs: ***https://github.com/ChromeDevTools/devtools-frontend/blob/main/front_end/core/sdk/NetworkManager.ts***
+2. Info about WebSockets (Genera;): ***https://www.diffusiondata.com/what-are-web-sockets-and-how-do-they-work/#:~:text=WebSockets%20are%20a%20protocol%20for,between%20the%20client%20and%20server.***
+3. CDP Session & Playwright: ***https://playwright.dev/docs/api/class-cdpsession***
+4. Official CDP URL: ***https://chromedevtools.github.io/devtools-protocol/***
+5. Official performance Docs: ***https://developer.chrome.com/docs/devtools/performance-insights?hl=pl***
+6. (Additional) Playwright with Mozilla Ff: ***https://playwright.dev/docs/browsers#firefox***
