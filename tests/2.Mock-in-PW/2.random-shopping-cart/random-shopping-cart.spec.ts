@@ -28,7 +28,7 @@ import { test, expect } from '@playwright/test';
 test.describe('User data tests - mock', () => {
   // The below use is not useful for API mocking
   let randomShoppingCartPage: RandomShoppingCartPage;
-  test.beforeAll('Navigate to proper page', async ({ page }) => {
+  test.beforeEach('Navigate to proper page', async ({ page }) => {
     // BeforeAll is used because no action performed except variable preparation
     randomShoppingCartPage = new RandomShoppingCartPage(page);
     //   await simpleUserPage.navigateTo();
@@ -157,7 +157,7 @@ test.describe('User data tests - mock', () => {
     test('4. Pure sum of costs without tax and shipping - incorrect data - empty product among others display and calculation', async ({
       page,
     }) => {
-      // Arrange
+      // Arrange - that test wil fail
       const costsSumTestId = 'total-subtotal-price';
       const costsSumLocator = page.getByTestId(costsSumTestId);
       const expectedSumOfCosts = '28.55';
@@ -203,7 +203,7 @@ test.describe('User data tests - mock', () => {
     test('5. Pure sum of costs without tax and shipping - incorrect data - empty product among others display and calculation', async ({
       page,
     }) => {
-      // Arrange
+      // Arrange - that test will fail
       const costsSumTestId = 'total-subtotal-price';
       const costsSumLocator = page.getByTestId(costsSumTestId);
       const expectedSumOfCosts = '28.55';
@@ -294,7 +294,7 @@ test.describe('User data tests - mock', () => {
     test('2. Shipping 10% of subtotal calculation - incorrect data - numbers = strings', async ({
       page,
     }) => {
-      // Arrange
+      // Arrange - this test will fail
       const shippingTestId = 'shipping-cost';
       const shippingLocator = page.getByTestId(shippingTestId);
       const subtotalPriceTestId = 'total-subtotal-price';
@@ -384,7 +384,7 @@ test.describe('User data tests - mock', () => {
     test('4. Shipping 10% of subtotal calculation - incorrect data not full object passed', async ({
       page,
     }) => {
-      // Arrange
+      // Arrange - this test will fail
       const shippingTestId = 'shipping-cost';
       const subtotalPriceTestId = 'total-subtotal-price';
       const expectedShippingPrice = '2.7';

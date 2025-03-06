@@ -5,7 +5,7 @@ test.describe('City weather handling', () => {
   let cityWeatherPage: CityWeatherPage;
   test.beforeEach(async ({ page }) => {
     cityWeatherPage = new CityWeatherPage(page);
-    cityWeatherPage.navigateTo(); //--> Here can be used because response is received after button click used
+    await cityWeatherPage.navigateTo(); //--> Here can be used because response is received after button click used
   });
 
   test('1. Get weather data and present table to user (no mock used)', async ({ page }) => {
