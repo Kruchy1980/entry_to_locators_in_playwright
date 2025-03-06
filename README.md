@@ -43,5 +43,6 @@ npm run format:check
 6. (Additional) Playwright with Mozilla Ff: ***https://playwright.dev/docs/browsers#firefox***
 
 # How to read results of CDP Metrics - different docs and blogs links
+
 1. Stackoverflow (metrics from pupepeter): ***https://stackoverflow.com/questions/53723263/understanding-chrome-devtools-performance-getmetrics-results***
-2. 
+2.
