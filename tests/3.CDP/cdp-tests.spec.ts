@@ -145,9 +145,9 @@ test.describe('CDP communication handling', () => {
     console.log(metrics);
   });
   // Killing browser after each test
-  // test.afterEach('Kill browser', async ({ page }) => {
-  //   await page.close();
-  // });
+  test.afterEach('Kill browser', async ({ page }) => {
+    await page.close();
+  });
 });
 
 // Prepare object which will pass proper network emulation as in test "1.2. CDP communication tests - enable No Throttling"

@@ -46,3 +46,6 @@ npm run format:check
 
 1. Stackoverflow (metrics from pupepeter): ***https://stackoverflow.com/questions/53723263/understanding-chrome-devtools-performance-getmetrics-results***
 2.
+
+# Playwright Isolation context
+1. PW Documentation: ***https://playwright.dev/docs/browser-contexts***
