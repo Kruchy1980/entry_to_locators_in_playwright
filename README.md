@@ -50,3 +50,5 @@ npm run format:check
 # Playwright Isolation context
 
 1. PW Documentation: ***https://playwright.dev/docs/browser-contexts***
+# Playwright shadow DOM documentation
+1. Official documentation of Playwright: ***https://playwright.dev/docs/locators#locate-in-shadow-dom***
