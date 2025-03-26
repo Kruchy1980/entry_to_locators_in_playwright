@@ -4,6 +4,11 @@
     "target": "ESNext",
     "module": "CommonJS",
     "strict": true,
+    "noImplicitAny": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {

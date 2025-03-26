@@ -11,6 +11,9 @@ export const expect = attributeValidation.extend({
     let messageStr = '';
     let pass = false;
     let actualValue = undefined;
+    interface MatcherError extends Error {
+      matcherResult?: { actual?: unknown };
+    }
 
     try {
       await attributeValidation(locator).toHaveAttribute(
@@ -19,10 +22,11 @@ export const expect = attributeValidation.extend({
         options,
       );
       pass = true;
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (e: any) {
+    } catch (e: unknown) {
+      const typedError = e as MatcherError;
       //   pass = false; not needed
-      actualValue = e.matcherResult?.actual;
+      actualValue = String(typedError.matcherResult?.actual);
+      // actualValue = String(e.matcherResult?.actual);
     }
 
     if (pass) {

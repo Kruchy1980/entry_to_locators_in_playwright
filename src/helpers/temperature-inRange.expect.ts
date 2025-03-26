@@ -15,8 +15,7 @@ export const expect = temperatureInRange.extend({
     // let matcherResult?: any;
     // Other solution
     interface MatcherError extends Error {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      matcherResult?: { actual?: unknown | any };
+      matcherResult?: { actual?: unknown };
     }
     // Assertion
     try {
@@ -30,7 +29,7 @@ export const expect = temperatureInRange.extend({
       actualValue = elementValue; // Just additional info for user -
     } catch (error: unknown) {
       const typedError = error as MatcherError;
-      actualValue = typedError.matcherResult?.actual;
+      actualValue = String(typedError.matcherResult?.actual);
       // actualValue = error.matcherResult?.actual;
       pass = false; // Not needed here we do not need to overwrite result which is false from the beginning
     }
