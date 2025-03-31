@@ -6,6 +6,7 @@
 - [Code and practice with locators](#code-and-practice-with-locators)
 - [Detailed look on locators](#detailed-look-on-locators)
 - [Basics and _Good Practices_](#basics-and-good-practices)
+- [Session](#session)
 - [Useful links:](#useful-links)
 
 # Selectors vs Locators
@@ -85,6 +86,26 @@ For that section look to for the tests in both files [*css_xpath-locators.spec.t
    - .form-container [data-test-id="submit-button"]
    - They are dependent of webpage structure and they can be not stable
 
+
+# Session
+Session is a batch of information which browser remembers the application
+In Playwright we can safely saving and restoring sessions using simple mechanism.
+1. Prepare for example login test
+2. Save the result in Session
+3. Call the session in the specific tests using in the specific test script file the following part of code:
+```typescript
+      test.use({storageState: SESSION_PATH});
+      where:
+      - storageState - is a keword where the Session is stored
+      - SESSION_PATH is a variable which contains path in project to file where the Session data is stored
+```
+For all of the above steps user needs to use embedded in pure playwright plugin for files handling:
+```typescript
+import path from 'path'; // <-- should be in the file in the playwright config file to call the session in proper place por projects
+```
+
+
 # Useful links:
 
 1. URL for lesson with links_1: ***https://jaktestowac.pl/lesson/pw5s01l07/***
+2. Urls for patterns in lesson: ***https://jaktestowac.pl/lesson/pw1s03l02/***
