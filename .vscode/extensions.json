@@ -1,6 +1,11 @@
 {
   "recommendations": [
     "jaktestowac-pl.vsc-playwright-snippets",
-    "jaktestowac-pl.vsc-playwright-snippets-ui"
+    "jaktestowac-pl.vsc-playwright-snippets-ui",
+    "esbenp.prettier-vscode",
+    "eamodio.gitlens",
+    "ms-playwright.playwright",
+    "streetsidesoftware.code-spell-checker",
+    "dbaeumer.vscode-eslint"
   ]
 }
