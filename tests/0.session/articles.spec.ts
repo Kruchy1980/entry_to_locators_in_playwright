@@ -1,9 +1,9 @@
-import { SESSION_PATH } from '@_pw-config';
+// import { SESSION_PATH } from '@_pw-config';
 import { test, expect } from '@playwright/test';
 
 // To use the session for specific tests we can use it directly with the file with our tests
-test.use({ storageState: SESSION_PATH });
-test.describe('Trying', () => {
+// test.use({ storageState: SESSION_PATH });
+test.describe('Users page verification', () => {
   test('Switch to users page', async ({ page }) => {
     // Arrange:
     await page.goto('/welcome/');
@@ -13,5 +13,15 @@ test.describe('Trying', () => {
     // // Assert:
     // const title = await page.title();
     expect(await page.title()).toContain('Users');
+  });
+  test('Switch to stats page', async ({ page }) => {
+    // Arrange:
+    await page.goto('/welcome/');
+    // Act:
+    // await expect(page.getByTestId('hello')).toBeVisible();
+    await page.getByTestId('open-stats').click();
+    // // Assert:
+    // const title = await page.title();
+    expect(await page.title()).toContain('Statistics');
   });
 });

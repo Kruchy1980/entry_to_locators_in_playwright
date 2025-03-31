@@ -13,6 +13,7 @@ test.describe('Session', () => {
 
     // Small assertion not really needed in this file
     await expect(page.getByTestId('hello')).toBeVisible();
+    await page.getByText('Toggle darkmode:').click();
     // await page.getByText('Toggle darkmode:').click();
     // Save the session in proper file - path per specific user can be used in here
     await page.context().storageState({ path: SESSION_PATH });

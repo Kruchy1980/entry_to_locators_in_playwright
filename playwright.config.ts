@@ -14,7 +14,10 @@ import * as path from 'path';
 // export const STORAGE_STATE = path.join(__dirname, 'tmp/sessionStorage.json');
 // Add code for SESSION_PATH
 // export const SESSION_PATH = path.join(__dirname, './src/.auth/session.json'); // <-- if we would like to keep it in src folder
+// Not recommended
 export const SESSION_PATH = path.join(__dirname, './.auth/session.json'); // To keep the file in separate folder of our project
+// RECOMMENDED - name must be updated to proper one
+export const SESSION_PATH_SETUP = path.join(__dirname, './.auth/session-setup.json'); // To keep the file in separate folder of our project
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -47,20 +50,28 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+    // The project is used only for authorization.spec.ts used as the pre-configuration file - not recommended
+    {
+      name: 'setupspec',
+      use: { ...devices['Desktop Chrome'] },
+      testMatch: '.*/authorization.spec.ts',
+    },
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'], storageState: SESSION_PATH },
+      dependencies: ['setupspec'],
     },
-    // The project below do not need to be used at all
+    // Those 2 projects ars used with proper setup with setup test used globally for creation session
     {
       name: 'chromium-session based tests',
       use: { ...devices['Desktop Chrome'], storageState: SESSION_PATH },
+      dependencies: ['setup'],
     },
     // The setup project must be added in here
-    // {
-    //   name: 'setup',
-    //   testMatch: '**.setup.ts',
-    // },
+    {
+      name: 'setup',
+      testMatch: '**.setup.ts',
+    },
     // {
     //   name: 'firefox',
     //   use: { ...devices['Desktop Firefox'] },
