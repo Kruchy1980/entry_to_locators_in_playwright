@@ -1,5 +1,9 @@
 // File used for environment variables preparation based on dotenv plugin installed for project
-// dotenv.config({ override: true });
+import 'dotenv/config.js';
+
+import * as dotenv from 'dotenv';
+// Dotenv must be declared before the synchronous function is executed
+dotenv.config({ override: true });
 
 export function requireEnvVariable(envVariable: string): string {
   // Prepare proper variable for environment

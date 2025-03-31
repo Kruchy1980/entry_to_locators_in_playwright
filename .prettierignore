@@ -5,3 +5,4 @@ test-results
 .env
 session.json
 with_comments
+.auth.*

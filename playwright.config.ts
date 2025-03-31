@@ -11,7 +11,10 @@ import * as path from 'path';
 // import path from 'path';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
 // Now we can use data to be stored in STORAGE_STATE
-export const STORAGE_STATE = path.join(__dirname, 'tmp/sessionStorage.json');
+// export const STORAGE_STATE = path.join(__dirname, 'tmp/sessionStorage.json');
+// Add code for SESSION_PATH
+// export const SESSION_PATH = path.join(__dirname, './src/.auth/session.json'); // <-- if we would like to keep it in src folder
+export const SESSION_PATH = path.join(__dirname, './.auth/session.json'); // To keep the file in separate folder of our project
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -19,7 +22,7 @@ export const STORAGE_STATE = path.join(__dirname, 'tmp/sessionStorage.json');
 export default defineConfig({
   testDir: './tests',
   /* prepare path to global.setup.ts */
-  globalSetup: 'config/global.setup.ts',
+  // globalSetup: 'config/global.setup.ts',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -48,7 +51,17 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-
+    // The project below do not need to be used at all
+    {
+      name: 'chromium-session based tests',
+      use: { ...devices['Desktop Chrome'] },
+      dependencies: ['setup'],
+    },
+    // The setup project must be added in here
+    {
+      name: 'setup',
+      testMatch: '**.setup.ts',
+    },
     // {
     //   name: 'firefox',
     //   use: { ...devices['Desktop Firefox'] },
