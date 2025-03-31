@@ -6,10 +6,12 @@ test.use({ storageState: SESSION_PATH });
 test.describe('Trying', () => {
   test('Switch to users page', async ({ page }) => {
     // Arrange:
+    await page.goto('/welcome/');
     // Act:
-    await expect(page.getByTestId('hello')).toBeVisible();
-    // await page.getByTestId('open-users').click();
+    // await expect(page.getByTestId('hello')).toBeVisible();
+    await page.getByTestId('open-users').click();
     // // Assert:
-    // expect(page.title()).toContain(/users.*/);
+    // const title = await page.title();
+    expect(await page.title()).toContain('Users');
   });
 });

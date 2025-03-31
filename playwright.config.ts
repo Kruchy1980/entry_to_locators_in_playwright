@@ -54,14 +54,13 @@ export default defineConfig({
     // The project below do not need to be used at all
     {
       name: 'chromium-session based tests',
-      use: { ...devices['Desktop Chrome'] },
-      dependencies: ['setup'],
+      use: { ...devices['Desktop Chrome'], storageState: SESSION_PATH },
     },
     // The setup project must be added in here
-    {
-      name: 'setup',
-      testMatch: '**.setup.ts',
-    },
+    // {
+    //   name: 'setup',
+    //   testMatch: '**.setup.ts',
+    // },
     // {
     //   name: 'firefox',
     //   use: { ...devices['Desktop Firefox'] },

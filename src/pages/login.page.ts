@@ -11,9 +11,9 @@ export class LoginPage extends PracticePage {
   constructor(page: Page) {
     super(page);
     this.url = '/login/';
-    this.userEmail = page.getByPlaceholder('Enter User Email');
-    this.userPassword = page.getByPlaceholder('Enter Password');
-    this.loginButton = page.getByRole('button', { name: 'LogIn' });
+    this.userEmail = page.locator('[name="username"]');
+    this.userPassword = page.locator('#password');
+    this.loginButton = page.locator('#loginButton');
   }
 
   // async loginValidUser(email: string, password: string): Promise<void> {
