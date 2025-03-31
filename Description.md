@@ -107,12 +107,13 @@ For all of the above steps user needs to use embedded in pure playwright plugin 
 ```typescript
 import * as path from 'path'; // <-- should be in the file in the playwright.config.ts file to call the session in proper place por projects
 ```
-**Commands for creation session with codegen and loading session to file with tests scripts:**
-1. Create session for specific envitronment and ***npx playwright codegen localhost:3000 --save-storage=<file_path>***: 
-example: `npx playwright codegen localhost:3000 --save-storage=auth.json`
-2. Load the session using codegen and specific envitronment: ***npx playwright codegen --load-storage=<file_path> localhost:3000***:
-`npx playwright codegen --load-storage=auth.json localhost:3000` 
 
+**Commands for creation session with codegen and loading session to file with tests scripts:**
+
+1. Create session for specific envitronment and **_npx playwright codegen localhost:3000 --save-storage=<file_path>_**:
+   example: `npx playwright codegen localhost:3000 --save-storage=auth.json`
+2. Load the session using codegen and specific envitronment: **_npx playwright codegen --load-storage=<file_path> localhost:3000_**:
+   `npx playwright codegen --load-storage=auth.json localhost:3000`
 
 # Useful links:
 
