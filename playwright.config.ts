@@ -54,7 +54,7 @@ export default defineConfig({
     {
       name: 'setupspec',
       use: { ...devices['Desktop Chrome'] },
-      testMatch: '.*/authorization.spec.ts',
+      testMatch: '.*/authentication.spec.ts',
     },
     {
       name: 'chromium',
@@ -64,7 +64,7 @@ export default defineConfig({
     // Those 2 projects ars used with proper setup with setup test used globally for creation session
     {
       name: 'chromium-session based tests',
-      use: { ...devices['Desktop Chrome'], storageState: SESSION_PATH },
+      use: { ...devices['Desktop Chrome'], storageState: SESSION_PATH_SETUP },
       dependencies: ['setup'],
     },
     // The setup project must be added in here

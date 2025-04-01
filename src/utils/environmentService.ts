@@ -1,5 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export function getEnvURL() {
+export function getEnvURL(): string {
   switch (process.env.ENV_NAME) {
     case 'localhost':
       return 'http://localhost:3000/';

@@ -1,9 +1,8 @@
-// import { SESSION_PATH } from '@_pw-config';
+import { SESSION_PATH, SESSION_PATH_SETUP } from '@_pw-config';
 import { test, expect } from '@playwright/test';
 
-// To use the session for specific tests we can use it directly with the file with our tests
-// test.use({ storageState: SESSION_PATH });
-test.describe('Users page verification', () => {
+test.describe('Navigation buttons for logged in user - users handling', () => {
+  test.use({ storageState: SESSION_PATH });
   test('Switch to users page', async ({ page }) => {
     // Arrange:
     await page.goto('/welcome/');
@@ -14,14 +13,17 @@ test.describe('Users page verification', () => {
     // const title = await page.title();
     expect(await page.title()).toContain('Users');
   });
-  test('Switch to stats page', async ({ page }) => {
-    // Arrange:
-    await page.goto('/welcome/');
-    // Act:
-    // await expect(page.getByTestId('hello')).toBeVisible();
-    await page.getByTestId('open-stats').click();
-    // // Assert:
-    // const title = await page.title();
-    expect(await page.title()).toContain('Statistics');
+  test.describe('Navigation buttons for logged in user - statisitc handling', () => {
+    test.use({ storageState: SESSION_PATH_SETUP });
+    test('Switch to stats page', async ({ page }) => {
+      // Arrange:
+      await page.goto('/welcome/');
+      // Act:
+      // await expect(page.getByTestId('hello')).toBeVisible();
+      await page.getByTestId('open-stats').click();
+      // // Assert:
+      const title = await page.title();
+      expect(title).toContain('Statistics');
+    });
   });
 });

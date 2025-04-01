@@ -16,11 +16,6 @@ export class LoginPage extends PracticePage {
     this.loginButton = page.locator('#loginButton');
   }
 
-  // async loginValidUser(email: string, password: string): Promise<void> {
-  //   await this.userEmail.fill(email);
-  //   await this.userPassword.fill(password);
-  //   await this.loginButton.click();
-  // }
   async loginValidUser(): Promise<void> {
     await this.userEmail.fill(USER_EMAIL);
     await this.userPassword.fill(USER_PASSWORD);
