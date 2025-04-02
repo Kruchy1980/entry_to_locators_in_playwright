@@ -139,3 +139,4 @@ dist
 tmp/*
 !tmp/.gitkeep
 .auth/
+/tests/not_to_commit_tests/*
