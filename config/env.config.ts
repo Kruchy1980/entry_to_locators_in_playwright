@@ -18,3 +18,5 @@ export function requireEnvVariable(envVariable: string): string {
 // After such prepared env variable function we need to export proper env values prepared by that function
 export const USER_EMAIL = requireEnvVariable('USER_EMAIL');
 export const USER_PASSWORD = requireEnvVariable('USER_PASSWORD');
+export const USER_EMAIL_VIEWER = requireEnvVariable('USER_EMAIL_VIEWER');
+export const USER_PASSWORD_VIEWER = requireEnvVariable('USER_PASSWORD_VIEWER');

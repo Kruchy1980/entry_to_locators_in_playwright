@@ -1,6 +1,6 @@
 import { Locator, Page } from '@playwright/test';
 import { PracticePage } from '@_src/pages/practice.page';
-import { USER_EMAIL, USER_PASSWORD } from '@_config/env.config';
+// import { USER_EMAIL, USER_PASSWORD } from '@_config/env.config';
 
 export class LoginPage extends PracticePage {
   url: string;
@@ -16,9 +16,9 @@ export class LoginPage extends PracticePage {
     this.loginButton = page.locator('#loginButton');
   }
 
-  async loginValidUser(): Promise<void> {
-    await this.userEmail.fill(USER_EMAIL);
-    await this.userPassword.fill(USER_PASSWORD);
+  async loginValidUser(user: string, password: string): Promise<void> {
+    await this.userEmail.fill(user);
+    await this.userPassword.fill(password);
     await this.loginButton.click();
   }
 }
